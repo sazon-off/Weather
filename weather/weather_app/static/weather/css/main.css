@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+
+
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 1000% 1000%;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+
+.container {
+  max-width: 400px;
+  min-width: 400px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.form-rounded {
+  border-radius: 2em;
+}
+
+.back-card {
+  border-radius: 40px !important;
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+.city span {
+  font-weight: 100;
+  font-size: 40pt;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  position: relative;
+  top: -10px;
+}
+
+.temp span {
+  font-weight: 80;
+  font-size: 6em;
+  letter-spacing: -5px;
+  white-space: nowrap;
+  color: white;
+}
+.card-mid {
+  line-height: 0.5;
+}
+
+.condition {
+    color: white;
+  line-height: 1em;
+  font-weight: 700;
+  font-size: 1em;
+  text-transform: capitalize;
+}
+
+
+.icon-container {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background: grey;
+  background-color: rgba(0,0,0,0.5);
+}
+.icon-container img {
+  margin: auto;
+}
+
+.card-bottom {
+  line-height: 0.5;
+}
+.card-bottom span {
+  font-size: 15px;
+  color: white;
+}
+.card-bottom p {
+  font-size: 50px;
+  font-weight: 100;
+  letter-spacing: -2px;
+  color: white;
+}

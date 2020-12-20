@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Погода</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'weather/css/main.css' %}">
+</head>
+<body>
+    <div class="container my-5">
+      <h1 class="text-center title">Узнать Погоду</h1>
+      <form action="" method="post">
+          {% csrf_token %}
+           <input
+          type="text"
+          name="name"
+          placeholder="Введите город"
+          class="form-control text-muted form-rounded p-4 shadow-sm"
+        />
+      </form>
+        {% for info in all_info %}
+      <div class="card rounded my-3 shadow-lg back-card">
+        <div class="card-top text-center">
+          <div class="city my-3">
+              <span>{{info.city}}</span>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="card-mid row">
+            <div class="col-8 text-center temp">
+              <span>{{info.temp}}&deg;</span>
+            </div>
+            <div class="col-4 condition-temp">
+              <p class="condition">{{info.description}}</p>
+              <p class="condition">макс. {{info.max}}&deg;</p>
+              <p class="condition">мин. {{info.min}}&deg;</p>
+            </div>
+          </div>
+
+          <div class="icon-container card shadow mx-auto">
+            <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="photo weather">
+          </div>
+          <div class="card-bottom px-5 py-4 row">
+            <div class="col text-center">
+              <p>{{info.feels}}&deg;</p>
+              <span>Ощущается</span>
+            </div>
+            <div class="col text-center">
+              <p>{{info.humidity}}%</p>
+              <span>Влажность</span>
+            </div>
+          </div>
+        </div>
+      </div>
+        {% endfor%}
+    </div>
+</body>
+</html>
