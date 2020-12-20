@@ -29,6 +29,7 @@ def index(request):
         }
 
         all_cities.append(city_info)
+        all_cities.reverse()
 
     context = {'all_info': all_cities}
 
